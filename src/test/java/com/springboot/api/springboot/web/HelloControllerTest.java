@@ -1,4 +1,4 @@
-package com.springboot.api.springboot;
+package com.springboot.api.springboot.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,14 +13,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@WebMvcTest(secure = false)
 public class HelloControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void returnhello() throws Exception {
+    public void returnhellotest() throws Exception {
         String hello = "hello";
 
         mvc.perform(get("/hello"))
