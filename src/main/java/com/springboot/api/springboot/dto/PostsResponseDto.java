@@ -1,7 +1,9 @@
 package com.springboot.api.springboot.dto;
 
 import com.springboot.api.springboot.domain.posts.Posts;
+import lombok.Getter;
 
+@Getter
 public class PostsResponseDto {
 
     private Long id;
@@ -9,7 +11,7 @@ public class PostsResponseDto {
     private  String  content;
     private  String author;
 
-    public PostsSaveRequestDto(Posts entity){
+    public PostsResponseDto(Posts entity){
         this.id =entity.getId();
         this.title =entity.getTitle();
         this.content =entity.getContent();

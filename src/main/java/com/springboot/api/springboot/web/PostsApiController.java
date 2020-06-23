@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.*;
 public class PostsApiController {
 
     private final PostsService postsService;
-    .;
+
 
     @PostMapping
-    public Long save(@RequestBody PostsSaveRequestDto requestDto){
+    public Long save(@RequestBody PostsSaveRequestDto requestDto) {
         return postsService.save(requestDto);
     }
 
     @PostMapping("/api/vi/posts/{id}")
-    public Long update(@PathVariable Long id, @RequestBody PostsSaveRequestDto requestDto){
-        return  postsService.update(id, requestDto);
-
-     @GetMapping("/api/vi/posts/{id}")
-     public PostsSaveRequestDto findById (@PathVariable Long id)
-        return  postsService.findByID(id);
-
+    public Long update(@PathVariable Long id, @RequestBody PostsSaveRequestDto requestDto) {
+        return postsService.update(id, requestDto);
     }
+     @GetMapping("/api/vi/posts/{id}")
+     public PostsSaveRequestDto findById(@PathVariable Long id){
+            return postsService.findById(id);
+        }
 }
+
