@@ -1,6 +1,8 @@
 package com.springboot.api.springboot.web;
 
+import com.springboot.api.springboot.dto.PostsResponseDto;
 import com.springboot.api.springboot.dto.PostsSaveRequestDto;
+import com.springboot.api.springboot.dto.PostsUpdateRequestDto;
 import com.springboot.api.springboot.service.posts.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +20,12 @@ public class PostsApiController {
     }
 
     @PostMapping("/api/vi/posts/{id}")
-    public Long update(@PathVariable Long id, @RequestBody PostsSaveRequestDto requestDto) {
+    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
     }
      @GetMapping("/api/vi/posts/{id}")
-     public PostsSaveRequestDto findById(@PathVariable Long id){
-            return postsService.findById(id);
+     public PostsResponseDto findById(@PathVariable Long id){
+        return postsService.findById(id);
         }
 }
 
